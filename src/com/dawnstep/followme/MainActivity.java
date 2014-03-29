@@ -57,7 +57,7 @@ public class MainActivity extends Activity implements OnClickListener {
 		@Override
 		protected String doInBackground(String... arg0) {
 			// TODO Auto-generated method stub
-			 String httpUrl = "http://192.168.2.151:8000/location/?name="+"spmno"+"&longitude="+longitude.toString()+"&latitude="+latitude.toString();   
+			 String httpUrl = "http://192.168.2.151:8000/location/?name="+"18640244302"+"&longitude="+longitude.toString()+"&latitude="+latitude.toString();   
 	         //创建httpRequest对象
 	         HttpGet httpRequest = new HttpGet(httpUrl);
 	         String result;
