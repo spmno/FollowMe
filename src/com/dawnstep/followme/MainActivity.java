@@ -68,7 +68,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			
 			LBSTool lbs = new LBSTool(MainActivity.this);
 			LocationData location = lbs.getLocation(30000);
-			String httpUrl = "http://192.168.8.200:8000/location/?name="+phoneNumber+"&longitude="+location.longitude+"&latitude="+location.latitude;   
+			String httpUrl = "http://192.168.8.223:3001/locations/?name="+phoneNumber+"&longitude="+location.longitude+"&latitude="+location.latitude;   
 			//创建httpRequest对象
 	        HttpGet httpRequest = new HttpGet(httpUrl);
 	        String result;
@@ -76,7 +76,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	        	HttpClient httpClient = new DefaultHttpClient();
 	        	HttpResponse httpResponse = httpClient.execute(httpRequest);
 	        	if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
-	        		result = EntityUtils.toString(httpResponse.getEntity());
+	        		result = httpUrl;//EntityUtils.toString(httpResponse.getEntity());
 	        		 
 	        	} else {
 	        		result = "request error";
